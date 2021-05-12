@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online SHA256 Calculator</title>
+</head>
+<body>
+	<header>
+		<h1 style="text-align: center;">Online SHA256 Calculator</h1>
+	</header>
+	<br><br><br>
+	<form style="text-align: center;" action="" method="post">
+		{% csrf_token %}
+		<!-- <h3>String</h3> -->
+		<input type="text" name="text">
+		<button type="submit">Calculate</button>
+	</form>
+	<br><br>
+	<p style="text-align: center;">
+		{% if result %}
+			<b style="text-align: center;">SHA256({{ orig }}) = {{ result }}</b> 
+		{% else %}
+			<p> </p>
+		{% endif %}
+	</p>
+</body>
+</html>
